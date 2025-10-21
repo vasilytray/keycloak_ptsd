@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   postgres:
     image: ${KEYCLOAK_POSTGRES_IMAGE_TAG}
@@ -147,7 +145,7 @@ services:
       - "traefik.http.routers.dashboard.service=api@internal"
       # Basic Authentication for the Traefik dashboard
       - "traefik.http.routers.dashboard.middlewares=authtraefik"
-      - "traefik.http.middlewares.authtraefik.basicauth.users=${TRAEFIK_BASIC_AUTH}"
+      - "traefik.http.middlewares.authtraefik.basicauth.users=tfadmin:${TRAEFIK_BASIC_AUTH}"
       # Specify the internal server port to the dashboard service
       - "traefik.http.services.dashboard.loadbalancer.server.port=8080"
       # Pass the original Host header to the backend
@@ -184,7 +182,9 @@ services:
   
 networks:
   keycloak-network:
+    external: true
   traefik-network:
+    external: true
 
 volumes:
   keycloak-postgres:
