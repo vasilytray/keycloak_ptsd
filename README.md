@@ -31,6 +31,10 @@ cd keycloak_ptsd
 - `TRAEFIK_HOSTNAME` - укажите Ваш публичный домен(поддомен) для доступа к панели Traefik, связанный c IP адресом (нужна A-запись у регистратора)
 - `TRAEFIK_BASIC_AUTH=traefikadmin:$$2y$$10$$sMzJfirKC75x/hVpiINeZOiSm.Jkity9cn4KwNkRvO7hSQVFc5FLO` - Аутентификация для Traefik, где traefikadmin - это username, а `$$2y$$10$$sMzJfirKC75x/hVpiINeZOiSm.Jkity9cn4KwNkRvO7hSQVFc5FLO` - это Пароль который должен быть закодирован используя MD5, SHA1 или BCrypt.
 
+>[!danger] Внимание!
+>При получении хэша BCrypt необходимо все знаки $ экранировать - поставить рядом с каждым еще один знак $
+
+
 >[!note] Можно воспользоваться одним из он-лайн сервисов:
 > например [Bcrypt Hash Generator](https://bcrypt-generator.com/)
 
@@ -43,11 +47,6 @@ cd keycloak_ptsd
 
 >[!tip] Обратите внимание, что `.env`файл должен находиться в том же каталоге, что и `docker-compose.yml`.
 
-Создайте сети для своих сервисов перед развертыванием конфигурации с помощью команд:
-
-`docker network create traefik-network`
-
-`docker network create keycloak-network`
 
 Развертывание Keycloak с помощью Docker Compose:
 

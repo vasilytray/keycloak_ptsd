@@ -125,6 +125,8 @@ services:
       - traefik-certificates:/etc/traefik/acme
     networks:
       - traefik-network
+    environment:
+      - TRAEFIK_BASIC_AUTH='${TRAEFIK_BASIC_AUTH}'
     ports:
       - "80:80"
       - "443:443"
@@ -182,9 +184,7 @@ services:
   
 networks:
   keycloak-network:
-    external: true
   traefik-network:
-    external: true
 
 volumes:
   keycloak-postgres:
