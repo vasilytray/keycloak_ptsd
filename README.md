@@ -85,4 +85,4 @@ cd keycloak_ptsd
 
 Использование этого скрипта обеспечивает контролируемый и управляемый процесс восстановления базы данных из существующей резервной копии.
 
-[![нижний колонтитул](https://user-images.githubusercontent.com/10498744/210157572-1fca0242-8af2-46a6-bfa3-666ffd40ebde.svg)]
+![нижний колонтитул](https://user-images.githubusercontent.com/10498744/210157572-1fca0242-8af2-46a6-bfa3-666ffd40ebde.svg)
