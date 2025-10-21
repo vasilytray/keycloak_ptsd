@@ -15,7 +15,7 @@
 1. Клонируйте репозиторий на сервер.
 
 ```sh
-git clone
+git clone git@github.com:vasilytray/keycloak_ptsd.git
 ```
 
 2. Перейдите в каталог с репозиторием
