@@ -184,9 +184,7 @@ services:
   
 networks:
   keycloak-network:
-    external: true
   traefik-network:
-    external: true
 
 volumes:
   keycloak-postgres:
