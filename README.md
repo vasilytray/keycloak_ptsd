@@ -5,10 +5,12 @@
 
 [Keycloak](https://www.keycloak.org/) — программное обеспечение с открытым исходным кодом, обеспечивающее единый вход, идентификацию и управление доступом для современных приложений и сервисов.
 
-> [!tip] Примечание
+> [!NOTE]
+> Примечание
 > Мы будем использовать [Traefik](https://traefik.io/traefik/) в качестве обратного прокси-сервера. Он будет получать криптографические сертификаты от [Let's Encrypt](https://letsencrypt.org/) для ваших доменных имён и направлять запросы к соответствующим сервисам на основе этих доменов.
 
->[!note] Важно!
+>[!IMPORTANT]
+>Важно!
 >На сервере должны быть установлены Docker Engine и Docker Compose.
 Документация по установке Docker Engine на Ubuntu Server см. в статье [Установка Docker Engine и Docker Compose на Ubuntu Server.](https://docs.docker.com/engine/install/ubuntu/#installation-methods)
 
@@ -31,11 +33,13 @@ cd keycloak_ptsd
 - `TRAEFIK_HOSTNAME` - укажите Ваш публичный домен(поддомен) для доступа к панели Traefik, связанный c IP адресом (нужна A-запись у регистратора)
 - `TRAEFIK_BASIC_AUTH=traefikadmin:$$2y$$10$$sMzJfirKC75x/hVpiINeZOiSm.Jkity9cn4KwNkRvO7hSQVFc5FLO` - Аутентификация для Traefik, где traefikadmin - это username, а `$$2y$$10$$sMzJfirKC75x/hVpiINeZOiSm.Jkity9cn4KwNkRvO7hSQVFc5FLO` - это Пароль который должен быть закодирован используя MD5, SHA1 или BCrypt.
 
->[!danger] Внимание!
+>[!WARNING]
+>Внимание!
 >При получении хэша BCrypt необходимо все знаки $ экранировать - поставить рядом с каждым еще один знак $
 
 
->[!note] Можно воспользоваться одним из он-лайн сервисов:
+>[!NOTE]
+>Можно воспользоваться одним из он-лайн сервисов:
 > например [Bcrypt Hash Generator](https://bcrypt-generator.com/)
 
 - `KEYCLOAK_DB_NAME - имя базы данных для Keycloak,
@@ -45,7 +49,8 @@ cd keycloak_ptsd
 - `KEYCLOAK_ADMIN_PASSWORD` - пароль админа для доступа в Keycloak,
 - `KEYCLOAK_HOSTNAME`- укажите Ваш публичный домен(поддомен) для доступа к панели Keycloak, связанный c IP адресом (нужна A-запись у регистратора)
 
->[!tip] Обратите внимание, что `.env`файл должен находиться в том же каталоге, что и `docker-compose.yml`.
+>[!TIP]
+>Обратите внимание, что `.env`файл должен находиться в том же каталоге, что и `docker-compose.yml`.
 
 
 Развертывание Keycloak с помощью Docker Compose:
