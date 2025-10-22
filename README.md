@@ -42,7 +42,7 @@ cd keycloak_ptsd
 >Можно воспользоваться одним из он-лайн сервисов:
 > например [Bcrypt Hash Generator](https://bcrypt-generator.com/)
 
-- `KEYCLOAK_DB_NAME - имя базы данных для Keycloak,
+- `KEYCLOAK_DB_NAME` - имя базы данных для Keycloak,
 - `KEYCLOAK_DB_USER`- пользователь БД
 - `KEYCLOAK_DB_PASSWORD` - пароль доступа к базе
 - `KEYCLOAK_ADMIN_USERNAME` - пользователь с правами админа для доступа в Keycloak,
